@@ -1,0 +1,25 @@
+{
+    "name": "instagram",
+    "version": "1.0.0",
+    "description": "A minimal Electron application",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "repository": "https://github.com/Sebastien-Lechat/projet-CDA-2020-Desktop.git",
+    "keywords": [
+        "Electron",
+        "quick",
+        "start",
+        "tutorial",
+        "demo"
+    ],
+    "author": "Allan, Bousso, Sebastien",
+    "license": "CC0-1.0",
+    "devDependencies": {
+        "electron": "^9.0.4"
+    },
+    "dependencies": {
+        "pm2": "^4.4.0"
+    }
+}

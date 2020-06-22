@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+/* Reset CSS */
+
+* {
+    padding: 0ch;
+    margin: 0ch;
+}
+
+
+/* Personnalisation Bootstrap 4 */
+
+
+/* Img */
+
+.img-thumbnail {
+    border: 0 !important;
+}
+
+
+/* container */
+
+.container {
+    margin-top: 10%;
+}
+
+
+/* input  */
+
+input {
+    border-radius: 15px !important;
+}
+
+
+/* label */
+
+label {
+    font-weight: bold;
+}
