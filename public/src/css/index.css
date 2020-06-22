@@ -7,6 +7,14 @@
     margin: 0ch;
 }
 
+a {
+    color: #fff;
+}
+
+.search {
+    border: None;
+}
+
 
 /* Personnalisation Bootstrap 4 */
 
@@ -41,8 +49,17 @@ label {
 
 /* color btn sumbit  */
 
-button[type='submit'] {
+button.valider {
     border-radius: 15px !important;
     background-color: #5395ea !important;
     color: white
+}
+
+
+/* search bar */
+
+.search {
+    text-align: center;
+    width: 20vw;
+    height: 2vh;
 }
