@@ -1,33 +1,7 @@
-.btn-primary,
-.btn-danger {
-    color: #fff !important;
-    margin-left: 30px;
-    margin: 20px;
-}
-
 .btn-danger {
     margin-left: 60px !important;
 }
 
 .btn-group {
     margin-top: 10%
-}
-
-.bg-light {
-    background-color: #a1a1a1;
-    z-index: -1;
-}
-
-.bg-white {
-    background-color: #fff;
-    -webkit-box-shadow: -1px 9px 5px -4px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: -1px 9px 5px -4px rgba(0, 0, 0, 0.75);
-    box-shadow: -1px 9px 5px -4px rgba(0, 0, 0, 0.75);
-    padding-left: 5%;
-    top: 0;
-}
-
-.card {
-    width: 100%;
-    padding-left: 5%;
 }

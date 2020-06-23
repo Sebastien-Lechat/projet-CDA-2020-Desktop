@@ -63,3 +63,13 @@ button.valider {
     width: 20vw;
     height: 2vh;
 }
+
+
+/* btn-bootstrap */
+
+.btn-primary,
+.btn-danger {
+    color: #fff !important;
+    margin-left: 30px;
+    margin: 20px;
+}
