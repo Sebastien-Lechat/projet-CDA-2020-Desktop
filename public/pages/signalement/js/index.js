@@ -26,3 +26,4 @@ $('#deco').click(() => {
     localStorage.clear()
     document.location.href = "/";
 })
+
