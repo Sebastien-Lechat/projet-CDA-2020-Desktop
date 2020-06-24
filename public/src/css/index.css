@@ -7,6 +7,14 @@
     margin: 0ch;
 }
 
+a {
+    color: #fff;
+}
+
+.search {
+    border: None;
+}
+
 
 /* Personnalisation Bootstrap 4 */
 
@@ -36,4 +44,32 @@ input {
 
 label {
     font-weight: bold;
+}
+
+
+/* color btn sumbit  */
+
+input#submit {
+    border-radius: 15px !important;
+    background-color: #5395ea !important;
+    color: white
+}
+
+
+/* search bar */
+
+.search {
+    text-align: center;
+    width: 20vw;
+    height: 2vh;
+}
+
+
+/* btn-bootstrap */
+
+.btn-primary,
+.btn-danger {
+    color: #fff !important;
+    margin-left: 30px;
+    margin: 20px;
 }

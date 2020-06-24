@@ -1,0 +1,38 @@
+/* header */
+
+.header {
+    position: absolute;
+    top: auto;
+    z-index: -1;
+    width: 100%;
+    background-color: #666666;
+    color: black;
+    text-align: center;
+}
+
+
+/* bg-bootstrap */
+
+.bg-light {
+    background-color: #a1a1a1;
+}
+
+
+/* bg-bar de recherche */
+
+.bg-white {
+    background-color: #fff;
+    -webkit-box-shadow: -1px 9px 5px -4px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 9px 5px -4px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 9px 5px -4px rgba(0, 0, 0, 0.75);
+    padding-left: 5%;
+    top: 0;
+}
+
+
+/*  modification de la card bootstrap */
+
+.card {
+    width: 100%;
+    padding-left: 5%;
+}

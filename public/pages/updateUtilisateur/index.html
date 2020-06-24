@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <title>Electron Instagram</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/index.css">
+    <!-- css généraux -->
+    <link rel="stylesheet" href="../../src/css/index.css">
+    <link rel="stylesheet" href="../../src/css/menu.css">
+    <link rel="stylesheet" href="../../src/css/footer.css">
+    <link rel="stylesheet" href="../../src/css/header.css">
+
+
+
+</head>
+
+<body>
+    <div class="row">
+        <!-- Menu Principal -->
+        <div class="col-2 menu">
+            <nav>
+                <ul>
+                    <li class="point"><img class="img-admin" src="https://fakeimg.pl/90/?text=Admin"></li>
+                    <li class="list-btn"><a class="btn" href="../accueil/index.html">Accueil</a></li>
+                    <li class="list-btn"><a class="btn" href="../signalement/index.html">Signalement</a></li>
+                    <li class="list-btn"><a class="btn" href="../allUtilisateur/index.html">Utilisateur</a></li>
+                    <li class="list-btn"><a class="btn" href="../admin/index.html">Admin</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Partie Métier -->
+        <div class="col-10">
+            <!-- navbar search -->
+            <div class="bg-white">
+                <nav class="offset-4  navbar">
+                    <form class="form-inline my-2 my-lg-0">
+                        <div class="form-control">
+                            <input class="search mr-sm-2" type="search" placeholder="search" aria-label="Search">
+                            <button class="btn my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                        </div>
+                    </form>
+                </nav>
+            </div>
+            <div class="col-12 row">
+                <div class="card cardcreateUser bg-light col-12">
+                    <div class="card-body">
+                        <form action="" class="form-row">
+                            <div class="col-3">
+                                <div class="carre">
+                                </div>
+                            </div>
+                            <div class="col-8 form-row">
+                                <div class="form-group col-6">
+                                    <label>Nom</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nom">
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="exampleInputPassword1">Prenom</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Prenom">
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="exampleInputEmail1">Email</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="exampleInputPassword1">Pseudo</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Pseudo">
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="exampleInputEmail1">Mot de passe</label>
+                                    <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Mot de passe">
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="exampleInputPassword1">Mot de passe</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de passe">
+                                </div>
+                                <div class="form-group col-12">
+                                    <label for="exampleInputPassword1">Url Image</label>
+                                    <input type="url" class="form-control" id="exampleInputPassword1" placeholder="Url ">
+                                </div>
+                                <div class="offset-1">
+                                    <button type="submit" class="btn btn-primary">Modifier</button>
+                                    <button type="reset" class="btn btn-danger">Supprimer</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- footer  -->
+            <div class="footer">&copy; Allan, Sebastien, Bousso</div>
+        </div>
+    </div>
+    <!-- You can also require other files to run in this process -->
+    <script src="https://kit.fontawesome.com/b9f5a620fe.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="./renderer.js"></script>
+</body>
+
+</html>
