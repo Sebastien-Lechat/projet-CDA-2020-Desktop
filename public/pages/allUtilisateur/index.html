@@ -10,12 +10,49 @@
     <link rel="stylesheet" href="../../src/css/menu.css">
     <link rel="stylesheet" href="../../src/css/footer.css">
     <link rel="stylesheet" href="../../src/css/header.css">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
     <link rel="stylesheet" href="css/index.css">
+    <script>
+        const settings = {
+            "url": "https://obscure-sands-01552.herokuapp.com/user",
+            "method": "GET",
+            "headers": {
+                "Content-Type": "application/x-www-form-urlencoded"
+            }
+        };
+
+        $.ajax(settings).done((response) => { // <>200
+            if (response === false) {
+                localStorage.clear()
+                document.location.href = "./../../../index.html";
+            } else {
+                console.log('connecter')
+                let i = 0
+                while (i < response.users.length) {
+                    console.log(response.users[i].idUser)
+                    console.log(response.users[i].nom)
+                    id = response.users[i].idUser
+                    nom = response.users[i].nom
+                    prenom = response.users[i].prenom
+                    email = response.users[i].email
+                    pseudo = response.users[i].pseudo
+                    sexe = response.users[i].sexe
+                    html = '<div class="card"><div class="card-body"><div class="row"><div class="col-1"><img src="https://fakeimg.pl/100/" alt="..." class="img-thumbnail"></div><div class="col-7"><small class="id col-3"> id ' + id + '</small><small class="nom col-4"> nom ' + nom + '</small><small class="prenom col-4"> prenom : ' + prenom + '</small><small class="email col-4"> email : ' + email + '</small><small class="pseudo col-4"> pseudo : ' + pseudo + '</small><small class="sexe col-3"> sexe : ' + sexe + '</small></div><div class="col-2"><a class="btn btn-primary">Modifier</a></div><div class="col-1"><a class="btn btn-danger">Supprimer</a></div></div></div></div>'
+                    $('#blockUser').append(html)
+                    i++
+                }
+            }
+
+        }).catch((err) => { // <> 400
+            localStorage.clear()
+            document.location.href = "./../../../index.html";
+        })
+    </script>
 
 </head>
 
 <body>
+
     <div class="row">
         <!-- Menu Principal -->
         <div class="col-2 menu">
@@ -52,25 +89,14 @@
                     <a href="../createUtilisateur/index.html" class="btn btn-success btn-sm"><i class="fas fa-plus"></i> Ajout d'un Utilisateur</a>
                 </div>
             </div>
-            <div class="container">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-2">
-                                <img src="https://fakeimg.pl/100/" alt="..." class="img-thumbnail">
-                            </div>
-                            <div class="col-6">
-                                <small>Lorem Delectus dolorem! Eveniet blanditiis, repellat iusto vitae enim pariatur ducimus dolor, sint odit, culpa qui. Provident dignissimos non delectus deserunt nobis recusandae repellat odit placeat tenetur assumenda expedita, porro fugit atque quae aut aspernatur?</small>
-                            </div>
-                            <div class="col-1"><a class="btn btn-primary">Modifier</a></div>
-                            <div class="col-3"><a class="btn btn-danger">Supprimer</a></div>
-                        </div>
-                    </div>
-                </div>
+            <div class="container" id="blockUser">
             </div>
-            <!-- footer  -->
-            <div class="footer">&copy; Allan, Sebastien, Bousso</div>
         </div>
+    </div>
+    </div>
+    <!-- footer  -->
+    <div class="footer">&copy; Allan, Sebastien, Bousso</div>
+    </div>
     </div>
     <!-- You can also require other files to run in this process -->
     <script src="https://kit.fontawesome.com/b9f5a620fe.js" crossorigin="anonymous"></script>
