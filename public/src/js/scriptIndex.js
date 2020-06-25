@@ -1,8 +1,8 @@
 // on desative envoi du formulaire
 document.querySelector("#form").addEventListener("click", function(event) {
-    event.preventDefault();
-}, false);
-//  console log de vérification 
+        event.preventDefault();
+    }, false)
+    //  console log de vérification 
 $("input[name=email").keyup(function() {
         console.log($('input[name=email').val())
     })
@@ -24,6 +24,7 @@ $("#submit").click(function() {
             "password": password
         },
         "success": function(data) {
+            // redirectionHome(data.token)
             document.location.href = "./public/pages/accueil/index.html"
         }
     };

@@ -22,8 +22,6 @@ $.ajax(settings).done((response) => { // <>200
 })
 
 $('#deco').click(() => {
-
     localStorage.clear()
     document.location.href = "/";
 })
-

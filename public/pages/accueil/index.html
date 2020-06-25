@@ -10,8 +10,28 @@
     <link rel="stylesheet" href="../../src/css/menu.css">
     <link rel="stylesheet" href="../../src/css/footer.css">
     <link rel="stylesheet" href="../../src/css/header.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
 
+    <script>
+        const settings = {
+            "url": "https://obscure-sands-01552.herokuapp.com/",
+            "method": "GET",
+            "headers": {
+                "Content-Type": "application/x-www-form-urlencoded"
+            }
+        };
 
+        $.ajax(settings).done((response) => { // <>200
+            if (response === false) {
+                localStorage.clear()
+                document.location.href = "./../../../index.html";
+            } else
+                console.log('connecter')
+        }).catch((err) => { // <> 400
+            localStorage.clear()
+            document.location.href = "./../../../index.html";
+        })
+    </script>
 </head>
 
 <body>
