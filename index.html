@@ -40,7 +40,46 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="./renderer.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
-    <script src="./public/src/js/scriptIndex.js">
+    <script>
+        // on desative envoi du formulaire
+        document.querySelector("#form").addEventListener("click", function(event) {
+                event.preventDefault();
+            }, false)
+            //  console log de vérification 
+        $("input[name=email").keyup(function() {
+                console.log($('input[name=email').val())
+            })
+            // une fois que le formulaire est envoyer
+        $("#submit").click(function() {
+            //  on selectionne le input email et password
+            var email = $('input[name=email]').val()
+            var password = $('input[name=password]').val()
+                // on parametre les requete ajax
+            var settings = {
+                "url": "https://obscure-sands-01552.herokuapp.com/auth/login",
+                "method": "POST",
+                "timeout": 0,
+                "headers": {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                "data": {
+                    "email": email,
+                    "password": password
+                },
+                "success": function(data) {
+                    redirectionHome(data.result[0].token)
+                }
+            };
+            // on met notre parametre et on envoi a api
+            $.ajax(settings).done(function(response) {
+                console.log(response);
+            })
+        })
+        const redirectionHome = (token) => {
+            localStorage.setItem('token', token);
+            document.cookie = "token=" + token;
+            document.location.href = "./public/pages/accueil/index.html";
+        }
     </script>
 
 </body>
