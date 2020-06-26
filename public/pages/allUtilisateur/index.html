@@ -10,8 +10,15 @@
     <link rel="stylesheet" href="../../src/css/menu.css">
     <link rel="stylesheet" href="../../src/css/footer.css">
     <link rel="stylesheet" href="../../src/css/header.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
     <link rel="stylesheet" href="css/index.css">
+    <!-- You can also require other files to run in this process -->
+    <script src="https://kit.fontawesome.com/b9f5a620fe.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="./renderer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+
     <script>
         const settings = {
             "url": "https://obscure-sands-01552.herokuapp.com/user",
@@ -37,7 +44,7 @@
                     email = response.users[i].email
                     pseudo = response.users[i].pseudo
                     sexe = response.users[i].sexe
-                    html = '<div class="card"><div class="card-body"><div class="row"><div class="col-1"><img src="https://fakeimg.pl/100/" alt="..." class="img-thumbnail"></div><div class="col-7"><small class="id col-3"> id ' + id + '</small><small class="nom col-4"> nom ' + nom + '</small><small class="prenom col-4"> prenom : ' + prenom + '</small><small class="email col-4"> email : ' + email + '</small><small class="pseudo col-4"> pseudo : ' + pseudo + '</small><small class="sexe col-3"> sexe : ' + sexe + '</small></div><div class="col-2"><a class="btn btn-primary">Modifier</a></div><div class="col-1"><a class="btn btn-danger" onclick="supprimer("+id+")">Supprimer</a></div></div></div></div>'
+                    html = '<div class="card"><div class="card-body"><div class="row"><div class="col-1"><img src="https://fakeimg.pl/100/" alt="..." class="img-thumbnail"></div><div class="col-7"><small class="id col-3"> id ' + id + '</small><small class="nom col-4"> nom ' + nom + '</small><small class="prenom col-4"> prenom : ' + prenom + '</small><small class="email col-4"> email : ' + email + '</small><small class="pseudo col-4"> pseudo : ' + pseudo + '</small><small class="sexe col-3"> sexe : ' + sexe + '</small></div><div class="col-2"><a class="btn btn-primary">Modifier</a></div><div class="col-1"><a class="btn btn-danger" onclick="supprimer(' + id + ')">Supprimer</a></div></div></div></div>'
                     $('#blockUser').append(html)
                     i++
                 }
@@ -119,12 +126,7 @@
     <div class="footer">&copy; Allan, Sebastien, Bousso</div>
     </div>
     </div>
-    <!-- You can also require other files to run in this process -->
-    <script src="https://kit.fontawesome.com/b9f5a620fe.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="./renderer.js"></script>
+
 </body>
 
 </html>
