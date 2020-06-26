@@ -21,8 +21,43 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
     <script src="js/index.js"></script>
-    <script src="./renderer.js "></script>
+    <script src="../../../renderer.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script>
+        let data = {
+            "url": "https://obscure-sands-01552.herokuapp.com/report/",
+            "method": "GET",
+            "headers": {
+                "Content-Type": "application/x-www-form-urlencoded"
+            }
+        };
 
+        $.ajax(data).done((response) => { // <>200
+            if (response === false) {
+                localStorage.clear()
+                document.location.href = "./../../../index.html";
+            } else {
+                console.log('connecter')
+                let i = 0
+                console.log(response)
+                while (i < response.reports.length) {
+                    console.log(response.reports[i].idSignalement)
+                    console.log(response.reports[i].description)
+                    date = response.reports[i].date
+                    des = response.reports[i].description
+                    id = response.reports[i].idSignalement
+
+                    html = '<div class="card"><div class="card-body"><div class="row"><div class="col-1"><img src="https://fakeimg.pl/100/" alt="..." class="img-thumbnail"></div><div class="col-7"><small class="id col-3"> date ' + date + '</small><small class="email col-4"> description : ' + des + '</small><small class="pseudo col-4"> id : ' + id + '</small></div><div class="col-2"><a class="btn btn-primary">Modifier</a></div><div class="col-1"><a class="btn btn-danger">Supprimer</a></div></div></div></div>'
+                    $('#blockUser').append(html)
+                    i++
+                }
+            }
+
+        }).catch((err) => { // <> 400
+            localStorage.clear()
+            document.location.href = "./../../../index.html";
+        })
+    </script>
 
 </head>
 
@@ -61,34 +96,13 @@
                 </div>
             </div>
             <div class="container">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-2">
-                                <img src="https://fakeimg.pl/100/" alt="..." class="img-thumbnail">
-                            </div>
-                            <div class="col-6">
-                                <small>Lorem Delectus dolorem! Eveniet blanditiis, repellat iusto vitae enim pariatur ducimus dolor, sint odit, culpa qui. Provident dignissimos non delectus deserunt nobis recusandae repellat odit placeat tenetur assumenda expedita, porro fugit atque quae aut aspernatur?</small>
-                            </div>
-                            <div class="col-1"><a class="btn btn-primary">Modifier</a></div>
-                            <div class="col-3"><a class="btn btn-danger">Supprimer</a></div>
-                        </div>
-                    </div>
-                </div>
+                <div id="blockUser"></div>
             </div>
-            <!-- footer  -->
-            <div class="footer">&copy; Allan, Sebastien, Bousso</div>
         </div>
+        <!-- footer  -->
+        <div class="footer">&copy; Allan, Sebastien, Bousso</div>
     </div>
-
-    <!-- You can also require other files to run in this process -->
-    <script src="https://kit.fontawesome.com/b9f5a620fe.js " crossorigin="anonymous "></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
-    <script src="./renderer.js "></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
-    <script src="js/index.js"></script>
+    </div>
 
 </body>
 
