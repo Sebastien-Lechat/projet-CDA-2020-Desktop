@@ -41,22 +41,42 @@
                 let i = 0
                 console.log(response)
                 while (i < response.reports.length) {
-                    console.log(response.reports[i].idSignalement)
-                    console.log(response.reports[i].description)
                     date = response.reports[i].date
                     des = response.reports[i].description
                     id = response.reports[i].idSignalement
 
-                    html = '<div class="card"><div class="card-body"><div class="row"><div class="col-1"><img src="https://fakeimg.pl/100/" alt="..." class="img-thumbnail"></div><div class="col-7"><small class="id col-3"> date ' + date + '</small><small class="email col-4"> description : ' + des + '</small><small class="pseudo col-4"> id : ' + id + '</small></div><div class="col-2"><a class="btn btn-primary">Modifier</a></div><div class="col-1"><a class="btn btn-danger">Supprimer</a></div></div></div></div>'
+                    html = '<div class="card"><div class="card-body"><div class="row"><div class="col-1"><img src="https://fakeimg.pl/100/" alt="..." class="img-thumbnail"></div><div class="col-7"><small class="id col-3"> date ' + date + '</small><small class="email col-4"> description : ' + des + '</small><small class="pseudo col-4"> id : ' + id + '</small></div><div class="col-2"><a class="btn btn-primary">Modifier</a></div><div class="col-1"><a class="btn btn-danger" onclick="supprimer(' + id + ')" >Supprimer</a></div></div></div></div>'
+
                     $('#blockUser').append(html)
+
                     i++
                 }
             }
-
         }).catch((err) => { // <> 400
             localStorage.clear()
             document.location.href = "./../../../index.html";
         })
+
+        function supprimer(id) {
+            console.log(id)
+            id = {
+                "url": "https://obscure-sands-01552.herokuapp.com/report/" + id,
+                "method": "DELETE",
+                "success": function(response) {
+                    window.location.reload()
+                }
+            }
+
+            $.ajax(id).done((response) => { // <>200
+                if (response === false) {
+                    console.log('echec')
+                } else {
+                    console.log('supprimer')
+                }
+            }).catch((err) => { // <> 400
+                console.log('probleme')
+            })
+        }
     </script>
 
 </head>
