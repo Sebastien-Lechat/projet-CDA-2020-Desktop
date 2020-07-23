@@ -46,7 +46,7 @@ function modifiers(id, idpublication) {
         "success": function(response) {
             localStorage.setItem('id', id);
             localStorage.setItem('idpublication', idpublication);
-            window.location.href = "../signalement/index.html"
+            window.location.href = "../voirSignalement/index.html"
         }
     }
     $.ajax(block).done((response) => { // <>200

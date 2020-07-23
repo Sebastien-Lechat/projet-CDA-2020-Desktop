@@ -63,7 +63,7 @@ function supprimerpublication(id, idPublication) {
         "url": "https://obscure-sands-01552.herokuapp.com/post/" + idPublication,
         "method": "DELETE",
         "success": function(response) {
-            window.location.reload()
+            window.location.href = "./../signalement/index.html"
         }
     }
 
