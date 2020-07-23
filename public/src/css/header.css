@@ -1,0 +1,34 @@
+/* header */
+
+.header {
+    position: absolute;
+    top: auto;
+    z-index: -1;
+    width: 100%;
+    background-color: #666666;
+    color: black;
+    text-align: center;
+}
+
+
+/* bg-bootstrap */
+
+.bg-light {
+    background-color: #fff !important;
+}
+
+
+/* bg-bar de recherche */
+
+.bg-white {
+    padding-left: 5%;
+    top: 0;
+}
+
+
+/*  modification de la card bootstrap */
+
+.card {
+    width: 100%;
+    padding-left: 5%;
+}

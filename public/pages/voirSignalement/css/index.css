@@ -1,0 +1,26 @@
+/* placement de card */
+
+.cardcreateUser {
+    border: none !important;
+    margin-top: 200px !important
+}
+
+
+/* corps de card */
+
+.card-body {
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.menu {
+    height: 100vh;
+}
+
+
+/* carre */
+
+.carre {
+    width: 300px;
+    height: 300px;
+}

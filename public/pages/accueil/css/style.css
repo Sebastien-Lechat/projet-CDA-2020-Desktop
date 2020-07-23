@@ -1,0 +1,25 @@
+/* css de accueil */
+
+.accueil {
+    height: 25vh;
+}
+
+#myChart {
+    padding-top: 5% !important;
+}
+
+.menu {
+    height: 100vh;
+}
+
+.margin-top {
+    padding-top: 10%;
+}
+
+.card-perso:hover {
+    background-color: #fff !important;
+}
+
+h3 {
+    font-size: 55px;
+}

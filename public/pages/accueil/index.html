@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <title>Electron Instagram</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../src/css/index.css">
+    <link rel="stylesheet" href="../../src/css/menu.css">
+    <link rel="stylesheet" href="../../src/css/footer.css">
+    <link rel="stylesheet" href="../../src/css/header.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- You can also require other files to run in this process -->
+    <script src="https://kit.fontawesome.com/b9f5a620fe.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- <script src="./../../renderer.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+
+
+    <script src="../../src/js/token.js"></script>
+</head>
+
+<body>
+    <div class="row">
+        <!-- Menu Principal -->
+        <div class="col-2 menu over">
+            <nav>
+                <ul>
+                    <li class="point">
+                        <div class="img-admin"><i class="fab fa-instagram"></i></div>
+                    </li>
+                    <li class="list-btn active"><a class="btn active" href="../accueil/index.html">Accueil</a></li>
+                    <li class="list-btn"><a class="btn" href="../signalement/index.html">Signalement</a></li>
+                    <li class="list-btn"><a class="btn" href="../allUtilisateur/index.html">Utilisateur</a></li>
+                    <li class="list-btn"><a class="btn" href="../admin/index.html">Admin</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Partie Métier -->
+        <div class="bg-light col-10">
+            <!-- navbar search -->
+            <div class="bg-white">
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel"></h5>
+                                <button type="button" id="close" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div id="userstyle" class="modal-body row">
+                                <div id="info" class="col-6">
+                                </div>
+                                <img id="imageavatar" class="col-6">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <nav class="offset-4 navbar">
+                    <form class="form-inline my-2 my-lg-0" id="formulaire">
+                        <div class="form-control">
+                            <input id="cherche" name="search" class="search mr-sm-2" placeholder="search" aria-label="Search">
+                            <button id="search" data-toggle="modal" data-target="#staticBackdrop" onclick="rechercheBar()" class="btn my-2 my-sm-0" type="submit"><i class="fas fa-search" ></i></button>
+                        </div>
+                    </form>
+                </nav>
+            </div>
+            <div class="margin-top card">
+                <div width="100" height="100">
+                    <h1 class="text-center">Tableau de bord</h1>
+                </div>
+                <div class="row">
+                    <div class="col-10 offset-1">
+                        <canvas id="myChart" width="400" height="170"></canvas>
+                        <div class=" row">
+                            <h3 id="user" class="col-4 text-center card"></h3>
+                            <h3 id="signalement" class="col-4 text-center card"></h3>
+                            <h3 id="posts" class="col-4 text-center card"></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../../src/js/search.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="js/script.js"></script>
+
+
+
+</html>

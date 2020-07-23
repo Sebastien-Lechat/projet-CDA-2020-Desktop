@@ -1,0 +1,64 @@
+/* menu */
+
+.menu {
+    background-color: #5768F3;
+    flex-direction: column !important;
+}
+
+
+/* li du menu */
+
+li {
+    padding: 5%;
+    color: #fff;
+    height: 100%;
+    list-style: circle;
+    margin-left: 15%;
+    box-shadow: black;
+}
+
+li.list-btn:hover,
+li.active {
+    background-color: #0000F3;
+    color: #fff;
+    margin-left: -12%;
+    width: 118%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+li.list-btn>a:hover,
+li.list-btn>a.active {
+    color: #fff;
+}
+
+li.point {
+    list-style: none;
+}
+
+
+/* image admin */
+
+.img-admin {
+    height: 13vh;
+}
+
+.fa-instagram {
+    font-size: 100px;
+    text-align: center;
+}
+
+
+/* button search */
+
+button {
+    background: #fff;
+}
+
+
+/* barre search */
+
+div.form-control {
+    border-radius: 1px;
+}
